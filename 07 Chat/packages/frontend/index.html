@@ -21,5 +21,29 @@
 <body>
     <h1>Chat</h1>
 </body>
+    <div class="container">
+        <br>
+        <div class="jumbotron">
+            <h1 class="display-4">Send Message</h1>
+            <br>
+            <input class="form-control" placeholder="Name">
+            <br>
+            <button id="send" class="btn btn-success">Send</button>
+        </div>
+        <div id="messages"></div>
+    </div>
 
+    <script>
+        $("#send").click(() => {
+            var message = {
+                from: 'JeanK',
+                text: 'Hello.'
+            } 
+            sendMessage(message)
+        })
+
+        function sendMessage(message) {
+            $("#messages").append(`<h4> ${message.from} </h4> <p> ${message.text} </p>`)
+        }
+    </script>
 </html>
